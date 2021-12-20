@@ -4,9 +4,9 @@ import styles from "./index.module.less";
 
 export const Layout: React.FC<{ children: ReactNode }> = (props) => {
   return (
-    <div>
+    <>
       <div className={styles.layout}>{props.children}</div>
       <Menu />
-    </div>
+    </>
   );
 };
