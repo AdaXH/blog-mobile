@@ -1,6 +1,7 @@
 import React from 'react';
 import { Gallery } from '../gallery';
 import { Moment } from '../moment';
+import { Project } from '../project';
 import { SiteInfo } from '../siteInfo';
 
 export const SLIDES = [
@@ -15,5 +16,9 @@ export const SLIDES = [
   {
     Component: Moment,
     icon: 'icon-dongtai',
+  },
+  {
+    Component: Project,
+    icon: 'icon-yuyan',
   },
 ];

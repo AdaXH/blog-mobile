@@ -1,0 +1,36 @@
+@import url(../../../../common/styles/constant.module.less);
+.project {
+  .RADIUS();
+  min-height: 100px;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 16px;
+  .noScroll();
+  &Item {
+    background-color: white;
+    border-radius: 30px;
+    margin-right: 10px;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    font-size: 20px;
+    min-width: 140px;
+    text-decoration: none;
+    height: auto;
+    .title {
+      font-size: 18px;
+      color: @MAIN_FONT_COLOR;
+      i {
+        font-weight: bold;
+        margin-left: 5px;
+        font-size: 20px;
+      }
+    }
+    .desc {
+      font-size: 13px;
+      color: @SUB_FONT_COLOR;
+      margin-top: 10px;
+    }
+  }
+}

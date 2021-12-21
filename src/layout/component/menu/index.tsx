@@ -7,14 +7,12 @@ function Menu() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   return (
-    <div className={styles.menuWrap}>
-      <div className={styles.menu}>
-        {MENUS.map(({ icon, path }) => (
-          <div key={path} className={styles.menuItem} onClick={() => navigate(path)}>
-            <i data-current={pathname === path} className={icon} />
-          </div>
-        ))}
-      </div>
+    <div className={styles.menu}>
+      {MENUS.map(({ icon, path }) => (
+        <div key={path} className={styles.menuItem} onClick={() => navigate(path)}>
+          <i data-current={pathname === path} className={icon} />
+        </div>
+      ))}
     </div>
   );
 }
