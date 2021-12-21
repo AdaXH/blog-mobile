@@ -45,12 +45,15 @@ export function useLoadComponent(importFn: () => Promise<{ default: ReactNode }>
 export function useInterval<T extends FN<E>, E>(fn: T, timer: number = 1000): Partial<E> {
   const ref = useRef<T>();
   const [data, setData] = useState<Partial<E>>({});
+  console.log('timer', timer);
   useMount(() => {
-    ref.current = setInterval(() => {
-      const res: E = fn();
+    ref.current = setInterval(async () => {
+      const res: E = await fn();
       setData(res);
     }, timer) as any as T;
   });
-  useUnMount<T>(ref.current as T);
+  useUnMount(() => {
+    clearInterval(ref.current as any);
+  });
   return data;
 }
