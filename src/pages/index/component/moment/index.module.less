@@ -1,0 +1,36 @@
+@import url(../../../../common/styles/constant.module.less);
+.moment {
+  // .RADIUS();
+  height: 160px;
+  display: flex;
+  overflow-x: auto;
+  font-size: 20px;
+  flex-wrap: nowrap;
+  padding-bottom: 16px;
+  .noScroll();
+  &Item {
+    min-width: 200px;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-right: 10px;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    justify-content: space-between;
+    &Title {
+      color: @MAIN_FONT_COLOR;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      height: 50px;
+    }
+    &Content {
+      white-space: pre-wrap;
+      color: @SUB_FONT_COLOR;
+      flex: 1;
+      font-size: 13px;
+    }
+  }
+}

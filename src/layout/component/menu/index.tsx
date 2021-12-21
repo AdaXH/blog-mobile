@@ -1,8 +1,22 @@
-import React from "react";
-import styles from "./index.module.less";
+import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { MENUS } from './constant';
+import styles from './index.module.less';
 
 function Menu() {
-  return <div className={styles.menu}></div>;
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+  return (
+    <div className={styles.menuWrap}>
+      <div className={styles.menu}>
+        {MENUS.map(({ icon, path }) => (
+          <div key={path} className={styles.menuItem} onClick={() => navigate(path)}>
+            <i data-current={pathname === path} className={icon} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default Menu;

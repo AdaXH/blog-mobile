@@ -1,6 +1,48 @@
+@import url(../../../../common/styles/constant.module.less);
 .siteInfo {
-  border-radius: 20px 0 0 20px;
+  .RADIUS();
   background-color: white;
-  height: 100px;
+  height: 60px;
+  padding: 20px 0;
+  padding-left: 50px;
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.14);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    border: 6px solid @MAIN_FONT_COLOR;
+    margin-top: -33px;
+    width: 60px;
+    height: 60px;
+    border-radius: 33px;
+    opacity: 0.05;
+  }
+  &Name {
+    color: @MAIN_FONT_COLOR;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0.7;
+  }
+  &No {
+    font-size: 13px;
+    margin-top: 10px;
+    display: flex;
+    color: @SUB_FONT_COLOR;
+    font-weight: bold;
+    align-items: center;
+    i {
+      font-size: 20px;
+      margin: 0 3px;
+      font-weight: bolder;
+      // &:nth-of-type(2) {
+      //   font-size: 22px;
+      // }
+    }
+  }
 }

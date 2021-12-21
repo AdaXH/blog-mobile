@@ -1,5 +1,5 @@
-import StaticInfo from "../staticInfo";
-import styles from "./index.module.less";
+import StaticInfo from '../staticInfo';
+import styles from './index.module.less';
 
 export default () => {
   return (

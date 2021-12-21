@@ -1,14 +1,19 @@
-import React from "react";
-import { Gallay } from "../gallay";
-import { SiteInfo } from "../siteInfo";
+import React from 'react';
+import { Gallery } from '../gallery';
+import { Moment } from '../moment';
+import { SiteInfo } from '../siteInfo';
 
 export const SLIDES = [
   {
     Component: SiteInfo,
-    icon: "icon-info",
+    icon: 'icon-info',
   },
   {
-    Component: Gallay,
-    icon: "icon-image",
+    Component: Gallery,
+    icon: 'icon-image',
+  },
+  {
+    Component: Moment,
+    icon: 'icon-dongtai',
   },
 ];
