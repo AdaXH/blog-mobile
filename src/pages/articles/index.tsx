@@ -1,13 +1,3 @@
-import React from 'react';
-import { Total } from './component/total';
-import styles from './index.module.less';
+import { Article } from './entry';
 
-function Article() {
-  return (
-    <div className={styles.articles}>
-      <Total total={100} curYearCount={66} curMonthCount={59} />
-    </div>
-  );
-}
-
-export default Article;
+export default () => <Article />;

@@ -8,26 +8,17 @@ import styles from './index.module.less';
 
 export const Hitokoto = memo(
   () => {
-    const [data, setData] = useState<HitokotoModel>();
-    const queryHitoko = useCallback(async () => {
-      const d = await getHitokto();
-      setData(d || {});
-    }, []);
-    useMount(queryHitoko);
-    const {
-      hitokoto: newHitokoto,
-      from: newFrom,
-      from_who: who,
-      resetTimer,
-    } = useInterval<any, HitokotoModel>(getHitokto, TIME.SEC * 20);
-    const { from, hitokoto, from_who } = data || {};
+    const { hitokoto, from, from_who, resetTimer } = useInterval<any, HitokotoModel>(
+      getHitokto,
+      TIME.SEC * 20,
+    );
     return (
       <>
-        <div className={styles.hitokoto} key={String(newHitokoto)}>
-          <div className={styles.desc}>{newHitokoto || hitokoto}</div>
-          <div className={styles.author}>{newFrom || from || who || from_who}</div>
+        <div className={styles.hitokoto} key={String(hitokoto)}>
+          <div className={styles.desc}>{hitokoto}</div>
+          <div className={styles.author}>{from || from_who}</div>
         </div>
-        <BottomMenu resetTimer={resetTimer} reload={newHitokoto} />
+        <BottomMenu resetTimer={resetTimer} reload={hitokoto} />
       </>
     );
   },
