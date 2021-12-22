@@ -1,4 +1,4 @@
-import { Hitokoto } from './hitokoto';
+import { Hitokoto } from './component/hitokoto';
 import styles from './index.module.less';
 
 export default () => {

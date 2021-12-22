@@ -1,9 +1,9 @@
-import { HitokotoModel } from './hitokoto';
+import { HitokotoModel } from './types';
 
 export async function getHitokto(): Promise<HitokotoModel> {
-  return new Promise((reolve) => {
+  return new Promise((resolve) => {
     fetch('https://v1.hitokoto.cn/')
       .then((d) => d.json())
-      .then((d) => reolve(d));
+      .then((d) => resolve(d));
   });
 }

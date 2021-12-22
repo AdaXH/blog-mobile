@@ -1,0 +1,42 @@
+@import url(../../../../common/styles/constant.module.less);
+@import url(../../../../common/styles/global.module.less);
+
+.total {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  .shadow();
+  border-radius: 20px;
+  background-color: #fefefe;
+  padding: 20px;
+  text-align: center;
+  .item {
+    //   display: ;
+    color: @MAIN_FONT_COLOR;
+    font-weight: bold;
+    font-size: 20px;
+    position: relative;
+    div:nth-of-type(2) {
+      font-size: 18px;
+      font-weight: normal;
+      color: @SUB_FONT_COLOR;
+      position: relative;
+      z-index: 1;
+      left: 0;
+      bottom: 0;
+    }
+    .icon {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: -4px;
+      left: 0;
+      .flex();
+      i {
+        font-size: 46px;
+        opacity: 0.2;
+        color: @SUB_FONT_COLOR;
+      }
+    }
+  }
+}

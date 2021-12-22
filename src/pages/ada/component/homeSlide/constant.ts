@@ -1,4 +1,3 @@
-import React from 'react';
 import { Gallery } from '../gallery';
 import { Moment } from '../moment';
 import { Project } from '../project';

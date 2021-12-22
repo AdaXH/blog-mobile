@@ -8,7 +8,7 @@ export const MENUS = [
     icon: 'iconfont icon-24gf-heartPulse2',
   },
   {
-    path: '/article',
+    path: '/articles/list',
     icon: 'iconfont icon-wenzhang',
   },
 ];

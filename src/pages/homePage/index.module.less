@@ -1,5 +1,6 @@
 @import url(../../common/styles/global.module.less);
 @import url(../../common/styles/animation.module.less);
+@import url(../../common/styles/constant.module.less);
 
 .home {
   //   height: calc(100vh + 100px);
@@ -32,9 +33,10 @@
 
 .hitokoto {
   padding: 20px;
-  color: white;
+  color: @WHITE_FONT;
   text-align: center;
   animation: fadeIn 0.7s;
+  letter-spacing: 2px;
   .desc {
     font-size: 20px;
   }
@@ -43,5 +45,72 @@
     margin-top: 20px;
     letter-spacing: 2px;
     font-style: italic;
+    padding: 0 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: @WHITE_FONT;
+    opacity: 0.8;
+    &::after,
+    &::before {
+      content: '';
+      width: 20px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.6);
+      margin-right: 20px;
+    }
+    &::after {
+      margin-left: 20px;
+    }
+  }
+}
+
+.bottom {
+  position: absolute;
+  bottom: 90px;
+  left: 0;
+  width: calc(100% - 40px);
+  height: 40px;
+  display: flex;
+  padding: 10px 20px;
+  justify-content: space-between;
+  .item,
+  .item2 {
+    width: 100%;
+    padding: 5px 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    .flex();
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.9);
+    justify-content: space-between;
+    div {
+      .flex();
+    }
+    span {
+      font-size: 13px;
+      margin-left: 5px;
+    }
+    i {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 20px;
+      transition: all 0.3s;
+    }
+  }
+  .item2 {
+    background-color: transparent;
+    div {
+      border-radius: 10px;
+      background-color: transparent;
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 5px 10px;
+      height: 100%;
+    }
+    .reset {
+      margin-right: 20px;
+      i {
+        animation: rotate 1s;
+        transform-origin: center;
+      }
+    }
   }
 }

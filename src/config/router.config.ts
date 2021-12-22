@@ -9,4 +9,9 @@ export default [
     path: '/ada',
     Component: () => import('@/pages/ada/index'),
   },
+  {
+    title: '',
+    path: '/articles/:id',
+    Component: () => import('@/pages/articles/index'),
+  },
 ];
