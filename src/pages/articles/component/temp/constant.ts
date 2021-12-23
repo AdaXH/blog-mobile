@@ -1,10 +1,10 @@
 export const STATIC_TEXT = {
   true: {
-    mainTitle: `Maybe You Can't Save The World.`,
-    subTitle: `But You Can Change The World.`,
+    mainTitle: `Maybe you can't save the world.`,
+    subTitle: `But you can change the world.`,
   },
   false: {
-    mainTitle: 'New Version.',
-    subTitle: 'Coming Soon.',
+    mainTitle: 'New version.',
+    subTitle: 'Coming soon.',
   },
 };

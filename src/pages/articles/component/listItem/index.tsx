@@ -5,7 +5,7 @@ import styles from './index.module.less';
 
 export const ListItem: React.FC<{ data: ArticleModel }> = ({ data }) => {
   if (!data) return null;
-  const { year, month, day } = useMemo(() => parseTime(data.date as string), [data.date]);
+  const { year, month, day } = useMemo(() => parseTime(data.date as string, Boolean(data.year)), [data.date]);
   return (
     <div className={styles.item}>
       <div className={styles.itemInfo}>

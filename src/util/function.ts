@@ -33,9 +33,9 @@ interface Time {
  * @param time
  * @returns
  */
-export function parseTime(time: string | Date): Partial<Time> {
+export function parseTime(time: string | Date, isDate = false): Partial<Time> {
   if (!time) return {};
-  const d = new Date(Number(time));
+  const d = isDate ? new Date(time as Date) : new Date(Number(time));
   return {
     year: `${d.getFullYear()}`,
     month: `${stringTime(d.getMonth() + 1)}`,
