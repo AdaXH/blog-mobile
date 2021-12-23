@@ -1,11 +1,11 @@
-import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import { Route, Routes, HashRouter } from 'react-router-dom';
 import routes from '@/config/router.config';
 import { useLoadComponent } from '@/util/hooks';
 import { Layout } from '@/layout';
 
 function RoutesApp() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Layout>
         <Routes>
           {routes.map(({ Component, path }) => (
@@ -13,7 +13,7 @@ function RoutesApp() {
           ))}
         </Routes>
       </Layout>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

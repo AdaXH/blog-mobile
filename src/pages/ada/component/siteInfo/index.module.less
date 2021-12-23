@@ -1,4 +1,5 @@
 @import url(../../../../common/styles/constant.module.less);
+@import url(../../../../common/styles/animation.module.less);
 .siteInfo {
   .RADIUS();
   background-color: white;
@@ -11,6 +12,7 @@
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  .bottom2TopAni(0.1s);
   &::before {
     content: '';
     position: absolute;

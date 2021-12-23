@@ -7,6 +7,7 @@ import { ArticleModel } from './types';
 import styles from './index.module.less';
 import { getGroupArticle } from './util';
 import { Temp } from './component/temp/temp';
+import { List } from './component/list';
 
 export const Article: React.FC<any> = () => {
   const [data, setData] = useState<ArticleModel[]>([]);
@@ -26,6 +27,7 @@ export const Article: React.FC<any> = () => {
       <div className={styles.articles}>
         <Total total={total} curYearCount={year} curMonthCount={month} />
         <Temp />
+        <List list={data} />
       </div>
     </>
   );

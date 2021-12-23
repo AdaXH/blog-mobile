@@ -21,3 +21,24 @@ export function stringify(originUrl: string, data?: Record<string, any>): string
   });
   return res;
 }
+
+interface Time {
+  year: string;
+  month: string;
+  day: string;
+}
+
+/**
+ * 日期格式化
+ * @param time
+ * @returns
+ */
+export function parseTime(time: string | Date): Partial<Time> {
+  if (!time) return {};
+  const d = new Date(Number(time));
+  return {
+    year: `${d.getFullYear()}`,
+    month: `${stringTime(d.getMonth() + 1)}`,
+    day: `${stringTime(d.getDate())}`,
+  };
+}

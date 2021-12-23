@@ -11,7 +11,7 @@ export function getGroupArticle(data: ArticleModel[]): { year: number; month: nu
   let yearNo = 0,
     monthNo = 0;
   data.forEach(({ date }) => {
-    const articleDate = new Date(date);
+    const articleDate = new Date(date as string);
     const articleYear = articleDate.getFullYear();
     const articleMonth = articleDate.getMonth() + 1;
     if (articleYear === TIME.curYear) yearNo++;

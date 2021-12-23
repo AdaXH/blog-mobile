@@ -1,5 +1,5 @@
-import { TIME, useInterval, useMount } from '@/util';
-import { memo, useCallback, useState } from 'react';
+import { TIME, useInterval } from '@/util';
+import { memo } from 'react';
 import { BottomMenu } from '../bottomMenu';
 import { getHitokto } from '../../service';
 import { HitokotoModel } from '../../types';

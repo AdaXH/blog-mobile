@@ -1,5 +1,5 @@
 import { useToggle } from '@/util';
-import { memo, useCallback, useContext, useEffect, useState } from 'react';
+import { memo, useCallback, useEffect, useState } from 'react';
 import styles from './index.module.less';
 
 export const BottomMenu: React.FC<{ reload: string | undefined; resetTimer: VoidFunction }> = memo(

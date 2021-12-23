@@ -10,21 +10,21 @@ export interface ArticleModel {
   /**
    * 文章标题
    */
-  title: string;
+  title?: string;
   /**
    * 文章摘要
    */
-  abstract: string;
+  abstract?: string;
   /**
    * 浏览量
    */
-  viewer: number;
+  viewer?: number;
   /**
    * 提交时间
    */
-  date: string | Date;
+  date?: string | Date;
   /**
    * 文章类型
    */
-  type: ArticleType;
+  type?: ArticleType;
 }

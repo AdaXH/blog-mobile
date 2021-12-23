@@ -12,7 +12,7 @@ export const Gallery: React.FC<{ config: Config }> = ({
   const imagesMemo = useMemo(() => groupImages(images || []), [images]);
   return (
     <div className={styles.gallery}>
-      {imagesMemo!.map((item, index) => (
+      {imagesMemo?.map((item, index) => (
         <ImgGroup images={item} key={index} />
       ))}
     </div>
