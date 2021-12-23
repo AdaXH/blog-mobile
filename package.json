@@ -1,12 +1,13 @@
 {
   "name": "init",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "publish": "npm run build && node oss",
     "preview": "vite preview",
-    "lint": "eslint ./src/**/*.ts",
-    "lint-fix": "eslint --fix ./src/**/*.ts"
+    "lint": "eslint ./src/**/*.{ts,tsx}",
+    "lint-fix": "eslint --fix ./src/**/*.{ts,tsx}"
   },
   "dependencies": {
     "js-cookie": "^3.0.1",
@@ -22,6 +23,7 @@
     "@typescript-eslint/eslint-plugin": "^5.8.0",
     "@typescript-eslint/parser": "^5.8.0",
     "@vitejs/plugin-react": "^1.0.7",
+    "ali-oss": "^6.16.0",
     "amfe-flexible": "^2.2.1",
     "autoprefixer": "^10.4.0",
     "classnames": "^2.3.1",
