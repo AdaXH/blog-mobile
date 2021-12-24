@@ -1,8 +1,16 @@
 @import url(../../../../common/styles/constant.module.less);
 @import url(../../../../common/styles/global.module.less);
+@import url(../../../../common/styles/animation.module.less);
 .item {
   font-size: 15px;
   margin-bottom: 20px;
+  padding-bottom: 20px;
+  padding: 20px;
+  width: 90%;
+  background-color: white;
+  border-radius: 20px;
+  .shadow();
+  .bottom2TopAni(0.2s);
   &Info {
     display: flex;
     align-items: center;
@@ -34,7 +42,7 @@
   &Type {
     display: flex;
     margin-top: 20px;
-    span {
+    &Box {
       margin-right: 10px;
       padding: 4px 10px;
       border-radius: 10px;
@@ -43,7 +51,12 @@
       background-color: #f6f7f9;
       color: @SUB_FONT_COLOR;
       i {
-        margin-right: 10px;
+        margin-right: 8px;
+      }
+      &Text {
+        opacity: 0;
+        animation: fadeIn 0.3s;
+        animation-fill-mode: forwards;
       }
     }
   }

@@ -33,3 +33,18 @@
   animation-delay: @timer;
   animation-fill-mode: forwards;
 }
+
+@keyframes scaleShake {
+  0% {
+    transform: scale(0.7);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  80% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

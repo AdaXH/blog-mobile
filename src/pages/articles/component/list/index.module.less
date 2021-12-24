@@ -1,12 +1,22 @@
 @import url(../../../../common/styles/constant.module.less);
 @import url(../../../../common/styles/animation.module.less);
 
-.list {
+.list,
+.listEmpty {
   border-radius: 20px;
-  background-color: #fefefe;
-  padding: 20px;
-  width: 90%;
-  .shadow();
+  // background-color: #fefefe;
+  // padding: 20px;
+  width: 100%;
   margin-top: 30px;
-  .bottom2TopAni(0.2s);
+  .wrap {
+    opacity: 0;
+    animation: fadeIn 0.3s;
+    animation-fill-mode: forwards;
+  }
+}
+.listEmpty {
+  background-color: white;
+  border-radius: 20px;
+  min-height: 11px;
+  .shadow();
 }

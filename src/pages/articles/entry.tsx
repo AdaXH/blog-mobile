@@ -10,14 +10,14 @@ import { Temp } from './component/temp/temp';
 import { List } from './component/list';
 
 export const Article: React.FC<any> = () => {
-  const [data, setData] = useState<ArticleModel[]>([]);
+  const [data, setData] = useState<ArticleModel[]>();
   useMount(async () => {
     const { data: res } = (await getArticles()) || {};
     if (res?.length) {
       setData(res);
     }
   });
-  const { total, year, month } = useMemo(() => getGroupArticle(data), [data]);
+  const { total, year, month } = useMemo(() => getGroupArticle(data || []), [data]);
   return (
     <>
       <div className={styles.topTitle}>My Articles</div>
@@ -27,7 +27,7 @@ export const Article: React.FC<any> = () => {
       <div className={styles.articles}>
         <Total total={total} curYearCount={year} curMonthCount={month} />
         <Temp />
-        <List list={data} />
+        <List list={data ? data : [{}, {}, {}]} />
       </div>
     </>
   );
