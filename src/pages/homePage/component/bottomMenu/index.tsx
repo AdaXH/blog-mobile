@@ -1,5 +1,6 @@
 import { useToggle } from '@/util';
 import { memo, useCallback, useEffect, useState } from 'react';
+import classnames from 'classnames';
 import styles from './index.module.less';
 
 export const BottomMenu: React.FC<{ reload: string | undefined; resetTimer: VoidFunction }> = memo(
@@ -17,17 +18,21 @@ export const BottomMenu: React.FC<{ reload: string | undefined; resetTimer: Void
     }, []);
     return (
       <div className={styles.bottom}>
-        {/* <div className={styles.item}>
-          <i className="iconfont icon-menu" />
-          <span>Flat ui</span>
-        </div> */}
         <div className={styles.item2}>
           <div onClick={onReset} className={styles.reset}>
             <i key={randomKey} className="icon-shuaxin1 iconfont" />
             <span>Next</span>
           </div>
           <div onClick={bool ? setFalse : setTrue}>
-            <i className={`iconfont ${bool ? 'icon-heart-fill' : 'icon-heart'}`} />
+            <i
+              key={String(bool)}
+              className={classnames({
+                iconfont: true,
+                'icon-heart-fill': bool,
+                'icon-heart': !bool,
+                [styles.heart]: true,
+              })}
+            />
           </div>
         </div>
       </div>
