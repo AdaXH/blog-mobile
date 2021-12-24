@@ -8,9 +8,9 @@ function Menu() {
   const navigate = useNavigate();
   return (
     <div className={styles.menu}>
-      {MENUS.map(({ icon, path }) => (
+      {MENUS.map(({ icon, path, bold }) => (
         <div key={path} className={styles.menuItem} onClick={() => navigate(path)}>
-          <i data-current={pathname === path} className={icon} />
+          <i data-current={pathname === path} className={icon} style={{ fontWeight: bold }} />
         </div>
       ))}
     </div>

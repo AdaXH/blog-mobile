@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './pages/routes';
-import './global.module.less';
-
 import 'amfe-flexible';
+import './global.module.less';
 
 ReactDOM.render(
   <React.StrictMode>

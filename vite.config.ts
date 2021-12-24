@@ -5,6 +5,7 @@ import path from 'path';
 
 // https://vitejs.dev/config/
 const isDev = process.env.NODE_ENV === 'development';
+console.log('isDev', isDev);
 export default defineConfig({
   plugins: [eslintPlugin, react()],
   base: isDev ? '/' : 'https://bucker-for-sae.oss-cn-hangzhou.aliyuncs.com/blog/blog-mobile/',
