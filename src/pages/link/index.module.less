@@ -1,0 +1,67 @@
+@import url(../../common/styles/constant.module.less);
+@import url(../../common/styles/animation.module.less);
+
+.links {
+  padding: 0 20px;
+  position: relative;
+  top: -102px;
+  z-index: 10;
+  .myLink {
+    border-radius: 20px;
+    padding: 20px;
+    .shadow();
+    background: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    .bottom2TopAni(0.1s);
+    .avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background-image: url(https://avatars.githubusercontent.com/u/33694748?v=4);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.28);
+      animation: scaleShake 0.6s;
+      margin-top: -45px;
+      position: relative;
+      background-color: white;
+      border: 5px solid white;
+    }
+    .myTitle {
+      font-weight: bold;
+      color: @MAIN_FONT_COLOR;
+      margin: 10px 0;
+      letter-spacing: 1px;
+    }
+    .myDesc {
+      color: @MAIN_FONT_COLOR;
+      opacity: 0.7;
+    }
+    .myText {
+      padding: 20px;
+      width: calc(100% - 40px);
+      border-radius: 20px;
+      background-color: #f7f7f7;
+      margin-top: 10px;
+      color: @MAIN_FONT_COLOR;
+      opacity: 0.9;
+      line-height: 30px;
+      position: relative;
+      i {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        font-weight: 600;
+        opacity: 1;
+        font-size: 20px;
+        color: #867ed3;
+      }
+    }
+  }
+}

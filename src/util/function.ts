@@ -42,3 +42,28 @@ export function parseTime(time: string | Date, isDate = false): Partial<Time> {
     day: `${stringTime(d.getDate())}`,
   };
 }
+
+/**
+ * 打开qq
+ */
+export function openQQ() {
+  window.open('http://wpa.qq.com/msgrd?v=3&uin=3532371088&site=qq&menu=yes');
+}
+
+/**
+ * 随机获取数组中的一项
+ * @param arg
+ * @returns
+ */
+export function getRandomItem(arg: any[]): any {
+  return arg[Math.floor(Math.random() * arg.length)];
+}
+
+/**
+ * 简版随即洗牌
+ * @param arr
+ * @returns
+ */
+export function simpleShuffle<T extends any[]>(arr: T): T {
+  return arr.sort(() => 0.5 - Math.random());
+}

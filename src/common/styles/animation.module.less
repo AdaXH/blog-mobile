@@ -48,3 +48,39 @@
     transform: scale(1);
   }
 }
+
+.fromRight(@timer) {
+  opacity: 0;
+  animation: fromRightAnimation 0.3s;
+  animation-delay: @timer;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fromRightAnimation {
+  from {
+    opacity: 0;
+    transform: translate3d(20px, 0, 0);
+  }
+  to {
+    transform: translate3d(0);
+    opacity: 1;
+  }
+}
+
+.scale(@timer) {
+  opacity: 0;
+  animation: scaleAnimation 0.3s;
+  animation-delay: @timer;
+  animation-fill-mode: forwards;
+}
+
+@keyframes scaleAnimation {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

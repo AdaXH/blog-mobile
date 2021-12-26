@@ -31,4 +31,8 @@ export interface ArticleModel {
    * 提交年份-向前兼容
    */
   year?: string;
+  /**
+   * 文章可见性
+   */
+  isHidden?: boolean;
 }

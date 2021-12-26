@@ -3,11 +3,11 @@ import { useMemo } from 'react';
 import { ArticleModel } from '../../types';
 import styles from './index.module.less';
 
-export const ListItem: React.FC<{ data: ArticleModel; index: number }> = ({ data, index }) => {
-  if (!data) return null;
+export const ListItem: React.FC<{ data: ArticleModel }> = ({ data }) => {
+  if (!data || data.isHidden) return null;
   const { year, month, day } = useMemo(() => parseTime(data.date as string, Boolean(data.year)), [data.date]);
   return (
-    <div className={styles.item} style={{ animationDelay: `${index * 0.25 || 0.25}s` }}>
+    <div className={styles.item}>
       <div className={styles.itemInfo}>
         <div className={styles.itemInfoIcon}>
           <i className="iconfont icon-smile" />

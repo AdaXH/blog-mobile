@@ -8,7 +8,7 @@ export const List: React.FC<{ list: ArticleModel[] }> = ({ list }) => {
     <div className={styles.list}>
       <span className={styles.wrap}>
         {list.map((item, index) => (
-          <ListItem index={index} key={index} data={item} />
+          <ListItem key={index} data={item} />
         ))}
       </span>
     </div>

@@ -14,4 +14,14 @@ export default [
     path: '/articles/:id',
     Component: () => import('@/pages/articles/index'),
   },
+  {
+    title: '',
+    path: '/link',
+    Component: () => import('@/pages/link/index'),
+  },
+  {
+    title: '',
+    path: '/message',
+    Component: () => import('@/pages/message/index'),
+  },
 ];

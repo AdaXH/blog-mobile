@@ -55,7 +55,7 @@
   width: 100%;
   margin-top: 50px;
   display: flex;
-  .bottom2TopAni(0.15s);
+  // .bottom2TopAni(0.15s);
   .left {
     border-radius: 10px;
     background-color: #e2e7ed;
@@ -72,6 +72,9 @@
       // color: @SUB_FONT_COLOR;
       color: #c0bfc4;
     }
+    .scale(0.35s);
+    transform-origin: center;
+    will-change: transform;
   }
   .right {
     margin-left: 20px;
@@ -82,10 +85,12 @@
     align-items: flex-start;
     font-weight: 600;
     letter-spacing: 1px;
+    .fromRight(0.35s);
     span:nth-of-type(2) {
       font-size: 14px;
       // color: @SUB_FONT_COLOR;
       color: #c0bfc4;
+      .fromRight(0.45s);
     }
   }
 }

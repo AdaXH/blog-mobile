@@ -10,11 +10,11 @@ export function getGroupArticle(data: ArticleModel[]): { year: number; month: nu
   if (!data?.length) return { year: 0, month: 0, total: 0 };
   let yearNo = 0,
     monthNo = 0;
-  data.forEach(({ date }) => {
+  data.forEach(({ date, year }) => {
     const articleDate = new Date(date as string);
     const articleYear = articleDate.getFullYear();
     const articleMonth = articleDate.getMonth() + 1;
-    if (articleYear === TIME.curYear) yearNo++;
+    if (articleYear === TIME.curYear || TIME.curYear.toString() === year) yearNo++;
     if (articleMonth === TIME.curMonth) monthNo++;
   });
   return {
