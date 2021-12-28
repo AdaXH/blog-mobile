@@ -42,7 +42,7 @@ export function useToggle(initBool = false): ToggleReturn {
  * @param importFn 组件的加载方法，例如import(xxx.tsx)
  * @returns {ReactNode} 返回加载后的组件
  */
-export function useLoadComponent(importFn: () => Promise<{ default: ReactNode }>): ReactNode {
+export function useLoadComponent(importFn: FN<Promise<{ default: ReactNode }>>): ReactNode {
   const [Component, setComponent] = useState<ReactNode>(null);
   useMount(async () => {
     const Load = await (await importFn()).default;
