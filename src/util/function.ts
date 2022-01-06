@@ -67,3 +67,11 @@ export function getRandomItem(arg: any[]): any {
 export function simpleShuffle<T extends any[]>(arr: T): T {
   return arr.sort(() => 0.5 - Math.random());
 }
+
+/**
+ * 随机bool值
+ * @returns {boolean}
+ */
+export function randonBool(): boolean {
+  return Math.random() > 0.5;
+}

@@ -16,5 +16,5 @@ export const MessageTop: React.FC<{ total: number }> = memo(
       </div>
     );
   },
-  (pre, next) => pre.total !== next.total,
+  (pre, next) => pre.total === next.total,
 );

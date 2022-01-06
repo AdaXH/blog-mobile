@@ -17,3 +17,5 @@ export const TIME = {
   curMonth,
   curDay,
 };
+
+export const RANDOM_COLORS = ['#9aa8aa', '#778491', '#dccfbc', '#c6ccc8', '#b0a095', '#b1d5ce', '#dcceab'];
