@@ -1,5 +1,5 @@
 import { useMount } from '@/util';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { MessageTop } from './component/messageTop';
 import { MessageItem } from './component/messgeItem';
 import { NewMsg } from './component/newMsg';
@@ -12,7 +12,7 @@ export default () => {
   const [data, setData] = useState<Message[]>([]);
   const [pagination, setPagination] = useState<{ total: number; page: number }>({ total: 0, page: 1 });
   const query = async (pageIndex = 1) => {
-    const { totalCount, data: resData } = await getAllMessage({ page: pageIndex, pageSize: 200 });
+    const { totalCount, data: resData } = await getAllMessage({ page: pageIndex, pageSize: 10 });
     if (resData) {
       setData(pageIndex === 1 ? resData : [...data, ...resData]);
       setPagination({
@@ -21,7 +21,24 @@ export default () => {
       });
     }
   };
+
+  const { total, page } = pagination;
+
   useMount(query);
+
+  useEffect(() => {
+    function listenScoll() {
+      if (!data.length || data.length === total || total === 1 || !total) return;
+      const scrollTop = document.scrollingElement?.scrollTop || 0;
+      const scrollHeight = document.scrollingElement?.scrollHeight;
+      const clientHeight = document.documentElement.clientHeight;
+      if (scrollTop + clientHeight === scrollHeight) {
+        query(page + 1);
+      }
+    }
+    window.addEventListener('scroll', listenScoll);
+    return () => window.removeEventListener('scroll', listenScoll);
+  }, [page, total, data.length]);
   return (
     <div className={styles.message}>
       <MessageTop total={pagination.total} />
@@ -29,7 +46,7 @@ export default () => {
         <NewMsg />
         <div className={styles.messageListWrap}>
           {data.map((item, index) => (
-            <MessageItem key={item._id} index={index} data={item} />
+            <MessageItem key={index} index={index} data={item} />
           ))}
         </div>
       </div>

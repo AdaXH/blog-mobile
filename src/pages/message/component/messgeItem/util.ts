@@ -7,3 +7,7 @@ import { getRandomItem, RANDOM_COLORS } from '@/util';
 export function getRandomColor(): string {
   return getRandomItem(RANDOM_COLORS);
 }
+
+export function randomAligh(): string {
+  return getRandomItem(['center', 'flex-start', 'flex-end']);
+}

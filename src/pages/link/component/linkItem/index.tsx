@@ -9,7 +9,7 @@ export const LinkItem: React.FC<{ data: Friend; index: number }> = ({ data, inde
     <a
       href={data.link}
       className={styles.linkItem}
-      style={{ backgroundColor: bg, animationDelay: `${index * 0.25 || '0.15'}s` }}
+      style={{ backgroundColor: bg }}
       data-white={bg === 'white'}
       target="_blank"
       rel="noreferrer"

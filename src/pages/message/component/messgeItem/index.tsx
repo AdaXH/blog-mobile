@@ -1,27 +1,40 @@
-import { randonBool } from '@/util';
-import React, { useMemo } from 'react';
+import { parseTime, replaceEmoji } from '@/util';
+import React, { memo } from 'react';
+import showdown from 'showdown';
 import { Message } from '../../types';
 import { getRandomColor } from './util';
 
 import styles from './index.module.less';
 
-export const MessageItem: React.FC<{ data: Message; index: number }> = ({ data, index }) => {
-  const style = useMemo(() => {
-    const bool = randonBool();
-    return {
-      width: bool ? '49%' : '100%',
-      animationDelay: `${index * 0.05 || 0.1}s`,
-    };
-  }, []);
-  const isShort = useMemo(() => style.width === '49%', [style.width]);
-  return (
-    <>
-      <div className={styles.item} style={style}>
-        <div className={styles.itemContent}>{data.content}</div>
-      </div>
-      {isShort && (
-        <div className={styles.item} data-fill style={{ ...style, backgroundColor: getRandomColor() }}></div>
-      )}
-    </>
-  );
-};
+const converter = new showdown.Converter();
+
+export const MessageItem: React.FC<{ data: Message; index: number }> = memo(
+  ({ data }) => {
+    const { year, month, day } = parseTime(data.date);
+    return (
+      <>
+        <div className={styles.item}>
+          <div className={styles.itemBg} style={{ backgroundColor: `${getRandomColor()}` }}>
+            <div
+              className={styles.itemBgAvatar}
+              style={{ backgroundImage: `url(${data.avatar})`, backgroundColor: `${getRandomColor()}` }}
+            ></div>
+            <div className={styles.itemBgName}>
+              @<span>{data.name}</span>
+              <span>
+                {year}/{month}/{day}
+              </span>
+            </div>
+          </div>
+          <div
+            className={styles.itemContent}
+            dangerouslySetInnerHTML={{
+              __html: converter.makeHtml(replaceEmoji(data.content) || ''),
+            }}
+          ></div>
+        </div>
+      </>
+    );
+  },
+  (pre, next) => pre.index === next.index,
+);
