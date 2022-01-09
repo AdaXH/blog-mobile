@@ -1,5 +1,5 @@
 import { useMount } from '@/util';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { MessageTop } from './component/messageTop';
 import { MessageItem } from './component/messgeItem';
 import { NewMsg } from './component/newMsg';
@@ -39,13 +39,9 @@ export default () => {
     window.addEventListener('scroll', listenScoll);
     return () => window.removeEventListener('scroll', listenScoll);
   }, [page, total, data.length]);
-  const messageCount = useMemo(
-    () => data?.reduce((pre, item) => pre + item.repeat?.length, 0) + total,
-    [data.length, total],
-  );
   return (
     <div className={styles.message}>
-      <MessageTop total={messageCount} />
+      <MessageTop total={pagination.total} />
       <div className={styles.messageList}>
         <NewMsg />
         <div className={styles.messageListWrap}>
