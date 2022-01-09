@@ -15,16 +15,17 @@ export const MessageItem: React.FC<{ data: Message; index: number }> = memo(
       <>
         <div className={styles.item}>
           <div className={styles.itemBg} style={{ backgroundColor: `${getRandomColor()}` }}>
+            <div className={styles.itemBgDot} style={{ backgroundColor: `${getRandomColor()}` }} />
             <div
               className={styles.itemBgAvatar}
               style={{ backgroundImage: `url(${data.avatar})`, backgroundColor: `${getRandomColor()}` }}
-            ></div>
-            <div className={styles.itemBgName}>
-              @<span>{data.name}</span>
-              <span>
-                {year}/{month}/{day}
-              </span>
-            </div>
+            />
+          </div>
+          <div className={styles.itemName}>
+            <span>{data.name}</span>
+            <span>
+              {year}/{month}/{day}
+            </span>
           </div>
           <div
             className={styles.itemContent}

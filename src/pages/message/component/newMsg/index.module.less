@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   overflow: hidden;
   .bottom2TopAni(0.1s);
   background-image: url(https://bucker-for-sae.oss-cn-hangzhou.aliyuncs.com/blog/bg/11.jpg);
@@ -24,15 +24,31 @@
     height: 100%;
     background: linear-gradient(to right, rgba(134, 126, 211, 0.8), rgba(159, 163, 231, 0.5));
     pointer-events: none;
+    z-index: -1;
   }
   &Content {
-    color: white;
-    position: absolute;
     top: 0;
-    left: 0;
-    z-index: 10;
     width: 100%;
     padding: 20px;
     height: 100%;
+    box-sizing: border-box;
+    color: white;
+    text-align: center;
+  }
+  &Entry {
+    padding: 20px;
+    background-color: #f7f7f7;
+    font-size: 14px;
+    color: @MAIN_FONT_COLOR;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    i {
+      font-size: 20px;
+      font-weight: bold;
+    }
   }
 }

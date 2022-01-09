@@ -12,38 +12,49 @@
   width: 100%;
   overflow: hidden;
   &Bg {
-    // height: 100px;
     align-items: center;
     padding: 20px;
+    padding-top: 30px;
     letter-spacing: 1px;
     color: @MAIN_FONT_COLOR;
-    font-weight: bold;
-    opacity: 0.85;
     overflow: hidden;
-    &Avatar {
-      width: 42px;
-      height: 42px;
+    position: relative;
+    &Dot {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 16px;
+      height: 15px;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       border-radius: 50%;
       background-color: @MAIN_FONT_COLOR;
-      border: 4px solid @MAIN_FONT_COLOR;
-      transition: all 0.3s;
     }
-    &Name {
-      font-size: 15px;
-      display: flex;
-      align-items: flex-end;
-      span {
-        margin-left: 2px;
-      }
-      span:nth-of-type(2) {
-        font-size: 12px;
-        color: rgba(255, 255, 255, 0.582);
-        margin-left: 10px;
-        font-weight: normal;
-      }
+    &Avatar {
+      width: 62px;
+      height: 62px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 50%;
+      background-color: @MAIN_FONT_COLOR;
+      transition: all 0.3s;
+      margin-left: -10px;
+    }
+  }
+  &Name {
+    font-size: 15px;
+    display: flex;
+    align-items: flex-end;
+    color: @MAIN_FONT_COLOR;
+    margin-left: 20px;
+    padding-top: 10px;
+    font-weight: bold;
+    span:nth-of-type(2) {
+      font-size: 12px;
+      margin-left: 10px;
+      font-weight: normal;
     }
   }
   &Content {
@@ -52,6 +63,7 @@
     color: @MAIN_FONT_COLOR;
     overflow-y: auto;
     padding: 20px;
+    padding-top: 10px;
     font-size: 13px;
     img {
       max-width: 100px;
