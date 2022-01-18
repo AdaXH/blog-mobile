@@ -2,7 +2,7 @@ export const PROJECTS = [
   {
     title: 'Sites',
     icon: 'iconfont icon-zhandianditu',
-    utl: 'https://github.com/AdaXH/sites-front-end-pc',
+    url: 'https://github.com/AdaXH/sites-front-end-pc',
     desc: '站点聚合平台，让更多的人记住你的网站',
   },
   {
