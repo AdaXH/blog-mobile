@@ -30,8 +30,8 @@
   },
   "timeline.excludeSources": [],
   "git.ignoreRebaseWarning": true,
-  "author-generator.author": "[linghua]",
-  "author-generator.email": "[linghua@mogu.com]",
+  "author-generator.author": "[Ada]",
+  "author-generator.email": "[adach@qq.com]",
   "author-generator.updateOnSave": true,
   "http.proxyAuthorization": null,
   "files.associations": {
@@ -46,5 +46,6 @@
   "editor.formatOnSave": true,
   "appworks.materialSources": [],
   "eslint.alwaysShowStatus": true,
-  "eslint.validate": ["javascript", "typescript", "javascriptreact", "typescriptreact"]
+  "eslint.validate": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
+  "cSpell.words": ["precaching", "Vite"]
 }

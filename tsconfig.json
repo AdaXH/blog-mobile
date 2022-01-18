@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "useDefineForClassFields": true,
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "lib": ["DOM", "ESNext", "webworker"],
     "allowJs": false,
     "skipLibCheck": false,
     "esModuleInterop": false,
@@ -19,7 +19,8 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "typeRoots": ["./node_modules/@types/", "./src/typings"]
+    "typeRoots": ["./node_modules/@types/", "./src/typings"],
+    "types": ["vite-plugin-pwa/client"]
   },
   "include": ["./src"],
   "exclude": ["node_modules"]

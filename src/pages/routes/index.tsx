@@ -2,6 +2,7 @@ import { Route, Routes, HashRouter } from 'react-router-dom';
 import routes from '@/config/router.config';
 import { useLoadComponent } from '@/util/hooks';
 import { Layout } from '@/layout';
+import ReloadPrompt from './pro';
 
 function RoutesApp() {
   return (
@@ -13,6 +14,7 @@ function RoutesApp() {
           ))}
         </Routes>
       </Layout>
+      <ReloadPrompt />
     </HashRouter>
   );
 }
