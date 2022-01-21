@@ -1,21 +1,15 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // eslint-disable-next-line no-use-before-define
-import React from 'react';
 import './pro.css';
 
 import { useRegisterSW } from 'virtual:pwa-register/react';
 
 function ReloadPrompt() {
   // replaced dynamically
-  const buildDate = '__DATE__';
   // replaced dyanmicaly
   const reloadSW = '__RELOAD_SW__';
 
-  const {
-    offlineReady: [offlineReady, setOfflineReady],
-    needRefresh: [needRefresh, setNeedRefresh],
-    updateServiceWorker,
-  } = useRegisterSW({
+  useRegisterSW({
     onRegistered(r: any) {
       // @ts-ignore
       if (reloadSW === 'true') {
@@ -33,11 +27,6 @@ function ReloadPrompt() {
       console.log('SW registration error', error);
     },
   });
-
-  const close = () => {
-    setOfflineReady(false);
-    setNeedRefresh(false);
-  };
 
   return null;
 }

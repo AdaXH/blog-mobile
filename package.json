@@ -2,7 +2,7 @@
   "name": "init",
   "version": "0.0.3",
   "scripts": {
-    "dev": "vite cross-env NODE_ENV=development",
+    "dev": "cross-env NODE_ENV=development vite",
     "build": "cross-env NODE_ENV=production DEBUG=vite-plugin-pwa:* BASE_URL=/ SOURCE_MAP=true vite build",
     "deploy": "npm run build && node oss",
     "preview": "vite preview",
