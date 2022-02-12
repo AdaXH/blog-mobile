@@ -1,0 +1,54 @@
+@lightColor: #6b6b6b;
+.preview {
+  position: relative;
+  border-top: 1px solid rgba(115, 115, 115, 0.2);
+  padding-top: 20px;
+  width: 100%;
+  transform: translate3d(0, 30px, 0);
+  opacity: 0;
+  animation: show 0.5s forwards;
+  p,
+  h6 {
+    color: rgba(0, 0, 0, 0.85);
+    margin-bottom: 5px;
+    font-size: 14px;
+    img {
+      max-width: 70px;
+      max-height: 70px;
+      margin-right: 3px;
+    }
+  }
+  h5 {
+    font-size: 15px;
+  }
+  h4 {
+    font-size: 16px;
+  }
+  h3 {
+    font-size: 17px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+  h1 {
+    font-size: 19px;
+  }
+}
+.preview::after {
+  content: attr(data-preview);
+  position: absolute;
+  top: 0;
+  left: -1px;
+  font-size: 13px;
+  color: @lightColor;
+}
+@keyframes show {
+  from {
+    transform: translate3d(0, 30px, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
